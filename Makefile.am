@@ -1,5 +1,11 @@
-# filepath: /home/thomas/todolist/Makefile.am
 AUTOMAKE_OPTIONS = subdir-objects
 
 bin_PROGRAMS = todolist
-todolist_SOURCES = src/main.c src/return_values.h
+
+SOURCES = \
+    src/main.c \
+    src/return_values.h \
+    src/status.h \
+    src/status.c
+
+todolist_SOURCES = $(SOURCES)

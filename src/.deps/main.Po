@@ -53,7 +53,8 @@ src/main.o: src/main.c /usr/include/stdc-predef.h /usr/include/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h /usr/include/alloca.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
- /usr/include/x86_64-linux-gnu/bits/stdlib.h src/return_values.h
+ /usr/include/x86_64-linux-gnu/bits/stdlib.h src/status.h \
+ src/return_values.h
 /usr/include/stdc-predef.h:
 /usr/include/stdio.h:
 /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
@@ -115,4 +116,5 @@ src/main.o: src/main.c /usr/include/stdc-predef.h /usr/include/stdio.h \
 /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h:
 /usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
 /usr/include/x86_64-linux-gnu/bits/stdlib.h:
+src/status.h:
 src/return_values.h:
