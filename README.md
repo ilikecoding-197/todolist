@@ -19,7 +19,7 @@ To build the project, follow these steps:
     make
     ```
 
-    The executable will be created in the current directory as `./todolist`.
+    The executable will be created in the current directory as [todolist](http://_vscodecontentref_/1).
 
 4. **Install the project** (optional):
     If you want to install the executable on your system, run:
@@ -27,7 +27,7 @@ To build the project, follow these steps:
     sudo make install
     ```
 
-    After installation, you can run the program using the command `todolist`.
+    After installation, you can run the program using the command [todolist](http://_vscodecontentref_/2).
 
 ## Adding Code Files to Build
 To add new code files to the build, follow these steps:
@@ -40,14 +40,14 @@ To add new code files to the build, follow these steps:
         Made by [your name]
 
         You can redistribute this file and/or modify it under the terms
-	    of version 2 of the GNU General Public License as published by
-	    the Free Software Foundation.  You should have received a copy
-	    of the license along with this file; see the file COPYING.
+        of version 2 of the GNU General Public License as published by
+        the Free Software Foundation.  You should have received a copy
+        of the license along with this file; see the file COPYING.
 
-	    This file is distributed in the hope that it will be useful,
-	    but WITHOUT ANY WARRANTY; without even the implied warranty of
-	    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-	    license for more details.
+        This file is distributed in the hope that it will be useful,
+        but WITHOUT ANY WARRANTY; without even the implied warranty of
+        MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+        license for more details.
     */
     #include <stdio.h>
 
@@ -59,15 +59,25 @@ To add new code files to the build, follow these steps:
     Make sure to replace the brackets.
 
 2. **Update the Makefile**:
-    Add your new source file to the `SOURCES` variable in the `Makefile.am`:
+    Add your new source file to the `SOURCES` variable in the [Makefile.am](http://_vscodecontentref_/3):
     ```makefile
     # filepath: /home/thomas/todolist/Makefile.am
+    AUTOMAKE_OPTIONS = subdir-objects
+
     bin_PROGRAMS = todolist
-    todolist_SOURCES = main.c newfile.c
+
+    SOURCES = \
+        src/main.c \
+        src/return_values.h \
+        src/status.h \
+        src/status.c \
+        src/newfile.c
+
+    todolist_SOURCES = $(SOURCES)
     ```
 
 3. **Rebuild the project**:
-    After updating the `Makefile.am`, you need to regenerate the `Makefile.in` and `Makefile`:
+    After updating the [Makefile.am](http://_vscodecontentref_/4), you need to regenerate the [Makefile.in](http://_vscodecontentref_/5) and [Makefile](http://_vscodecontentref_/6):
     ```sh
     autoreconf -i
     ./configure

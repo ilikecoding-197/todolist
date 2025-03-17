@@ -34,3 +34,6 @@ tmp/
 
 # Do not ignore GitHub Actions workflows
 !.github/
+
+# Ingore IDE files
+.vscode/

@@ -102,7 +102,8 @@ CONFIG_CLEAN_VPATH_FILES =
 am__installdirs = "$(DESTDIR)$(bindir)"
 PROGRAMS = $(bin_PROGRAMS)
 am__dirstamp = $(am__leading_dot)dirstamp
-am__objects_1 = src/main.$(OBJEXT) src/status.$(OBJEXT)
+am__objects_1 = src/main.$(OBJEXT) src/status.$(OBJEXT) \
+	src/task.$(OBJEXT)
 am_todolist_OBJECTS = $(am__objects_1)
 todolist_OBJECTS = $(am_todolist_OBJECTS)
 todolist_LDADD = $(LDADD)
@@ -121,7 +122,8 @@ am__v_at_1 =
 DEFAULT_INCLUDES = -I.@am__isrc@
 depcomp = $(SHELL) $(top_srcdir)/depcomp
 am__maybe_remake_depfiles = depfiles
-am__depfiles_remade = src/$(DEPDIR)/main.Po src/$(DEPDIR)/status.Po
+am__depfiles_remade = src/$(DEPDIR)/main.Po src/$(DEPDIR)/status.Po \
+	src/$(DEPDIR)/task.Po
 am__mv = mv -f
 COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
@@ -273,7 +275,9 @@ SOURCES = \
     src/main.c \
     src/return_values.h \
     src/status.h \
-    src/status.c
+    src/status.c \
+    src/task.c \
+    src/task.h
 
 todolist_SOURCES = $(SOURCES)
 all: all-am
@@ -364,6 +368,7 @@ src/$(DEPDIR)/$(am__dirstamp):
 src/main.$(OBJEXT): src/$(am__dirstamp) src/$(DEPDIR)/$(am__dirstamp)
 src/status.$(OBJEXT): src/$(am__dirstamp) \
 	src/$(DEPDIR)/$(am__dirstamp)
+src/task.$(OBJEXT): src/$(am__dirstamp) src/$(DEPDIR)/$(am__dirstamp)
 
 todolist$(EXEEXT): $(todolist_OBJECTS) $(todolist_DEPENDENCIES) $(EXTRA_todolist_DEPENDENCIES) 
 	@rm -f todolist$(EXEEXT)
@@ -378,6 +383,7 @@ distclean-compile:
 
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/main.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/status.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/task.Po@am__quote@ # am--include-marker
 
 $(am__depfiles_remade):
 	@$(MKDIR_P) $(@D)
@@ -678,6 +684,7 @@ distclean: distclean-am
 	-rm -f $(am__CONFIG_DISTCLEAN_FILES)
 		-rm -f src/$(DEPDIR)/main.Po
 	-rm -f src/$(DEPDIR)/status.Po
+	-rm -f src/$(DEPDIR)/task.Po
 	-rm -f Makefile
 distclean-am: clean-am distclean-compile distclean-generic \
 	distclean-tags
@@ -727,6 +734,7 @@ maintainer-clean: maintainer-clean-am
 	-rm -rf $(top_srcdir)/autom4te.cache
 		-rm -f src/$(DEPDIR)/main.Po
 	-rm -f src/$(DEPDIR)/status.Po
+	-rm -f src/$(DEPDIR)/task.Po
 	-rm -f Makefile
 maintainer-clean-am: distclean-am maintainer-clean-generic
 

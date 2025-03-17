@@ -21,17 +21,22 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "status.h"
+#include "task.h"
 #include "return_values.h"
 
 int main(int argc, char *argv[]) {
-    /* status test */
-    status_t status_pending = PENDING;
-    status_t status_inprogress = INPROGRESS;
-    status_t status_completed = COMPLETED;
+    /* task test */
+    task_t *task = task_new("test", "this is a test", time(NULL));
+    if (task == NULL) {
+        fprintf(stderr, "task_new failed\n");
+        return FAILURE;
+    }
 
-    printf("status_t PENDING: %s\n", status_to_string(status_pending));
-    printf("status_t INPROGRESS: %s\n", status_to_string(status_inprogress));
-    printf("status_t COMPLETED: %s\n", status_to_string(status_completed));
-    
+    /* print task */
+    printf("task: %s\n", task_to_string(task));
+
+    /* free task */
+    task_free(task);
+
     return SUCCESS;
 }

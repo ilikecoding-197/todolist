@@ -19,6 +19,7 @@
 */
 
 #include "status.h"
+#include <stddef.h>
 
 const char *status_to_string(status_t status) {
     /* switch statement to return correct string */
@@ -30,6 +31,6 @@ const char *status_to_string(status_t status) {
         case COMPLETED:
             return "completed";
         default:
-            return "unknown";
+            return NULL;
     }
 }

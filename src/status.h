@@ -21,7 +21,7 @@
 #ifndef STATUS_H
 #define STATUS_H
 
-/* denotes the status of a task. */
+/* the status of a task. */
 typedef enum {
     PENDING = 0, /* task is pending */
     INPROGRESS = 1, /* task is in progress */
