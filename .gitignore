@@ -31,3 +31,6 @@ libtool
 build/
 dist/
 tmp/
+
+# Do not ignore GitHub Actions workflows
+!.github/
