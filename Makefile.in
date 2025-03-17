@@ -271,7 +271,7 @@ top_srcdir = @top_srcdir@
 
 # filepath: /home/thomas/todolist/Makefile.am
 AUTOMAKE_OPTIONS = subdir-objects
-todolist_SOURCES = src/main.c
+todolist_SOURCES = src/main.c src/return_values.h
 all: all-am
 
 .SUFFIXES:

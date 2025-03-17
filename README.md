@@ -86,7 +86,7 @@ To set up a development environment, follow these steps:
 
 1. **Clone the repository**:
     ```sh
-    git clone https://github.com/yourusername/todolist.git
+    git clone https://github.com/ilikecoding-197/todolist.git
     cd todolist
     ```
 
